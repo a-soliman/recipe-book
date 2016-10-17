@@ -5,9 +5,12 @@ import { Recipe } from '../recipe';
   templateUrl: './recipe-list.component.html'
 })
 export class RecipeListComponent implements OnInit {
-  recipes: Recipe[] = [];
-  @Output() recipeSelected = new EventEmitter();
-  recipe = new Recipe('Dummy', 'Dummy', 'https://pbs.twimg.com/profile_images/684144749855567873/5ysjqVoC.jpg')
+   recipes: Recipe[] = [
+     new Recipe('Greek Salad', 'Very tasty', 'http://previews.123rf.com/images/serezniy/serezniy1110/serezniy111000532/10817766-Deliciosa-ensalada-griega-en-la-placa-aislada-en-blanco-Foto-de-archivo.jpg', '[]');
+     new Recipe('Summer Salad', 'Nice and Sunny', 'http://homecaprice.com/wp-content/uploads/2015/05/3-salad.jpg', '[]');
+   ];
+   @Output() recipeSelected = new EventEmitter<Recipe>()
+  
   constructor() { }
 
   ngOnInit() {
