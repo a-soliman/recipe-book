@@ -7,7 +7,7 @@ export class DropdownDirective {
 	@HostBinding('class.open') get opened() {
 		return this.isOpen;
 	}
-	@HostListener('click') open() {
+	@HostListener('mouseenter') open() {
 		this.isOpen = true;
 	}
 	@HostListener('mouseleave') close() {
